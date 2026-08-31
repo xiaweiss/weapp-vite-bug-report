@@ -1,0 +1,9 @@
+allowBuilds:
+  '@swc/core': true
+  esbuild: true
+minimumReleaseAgeExclude:
+  - '@weapp-vite/ast@6.25.1'
+  - '@weapp-vite/web@1.4.16'
+  - '@wevu/compiler@6.25.1'
+  - weapp-vite@6.25.1
+  - wevu@6.25.1
