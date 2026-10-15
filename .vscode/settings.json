@@ -120,7 +120,7 @@
   },
   "files.exclude": {
     "node_modules": true,
-    "dist": true,
+    "dist": false,
     "**/dist-*": true,
     "**/dist-plugin": true,
     "**/dist-web": true,

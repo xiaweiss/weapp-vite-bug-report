@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import autoRoutes from 'weapp-vite/auto-routes'
 import { createRouter } from 'wevu/router'
+import { isPC, isIOS } from './utils/index'
 
 defineAppJson({
   pages: autoRoutes.pages,
@@ -23,7 +24,9 @@ const sleep = (ms: number = 0) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-const router = createRouter()
+const router = createRouter({
+  initialNavigationMode: "blocking"
+})
 
 const login = async () => {
   console.log('开始登录')
@@ -35,6 +38,12 @@ router.beforeEach(async (to, from) => {
   console.log('beforeEach', to, from)
   await login()
   return true
+})
+
+onLaunch(() => {
+  console.log('App launched')
+  console.log('isPC', isPC())
+  console.log('isIOS', isIOS())
 })
 </script>
 
